@@ -1,4 +1,5 @@
 <div>
+    <div *ngIf="config != undefined && config.user != undefined">{{config.user}}</div>
     <sidebar-logo *ngIf="config != undefined && config.logo != undefined" [logo]="config.logo"></sidebar-logo>
     <div *ngIf="config != undefined && config.menuItems != undefined">
         <sidebar-menu *ngFor="let menu of config.menuItems" [menuItem]="menu"></sidebar-menu>
