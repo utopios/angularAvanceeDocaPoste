@@ -5,6 +5,7 @@ import { ToDoModule } from 'src/demo-todo-page/todo.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LikeModule } from './core/like';
+import { CarouselModule } from './ui/carousel';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LikeModule } from './core/like';
     BrowserModule,
     AppRoutingModule,
     ToDoModule,
-    LikeModule
+    LikeModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
