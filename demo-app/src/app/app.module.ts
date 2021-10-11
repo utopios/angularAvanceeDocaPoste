@@ -4,6 +4,7 @@ import { ToDoModule } from 'src/demo-todo-page/todo.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LikeModule } from './core/like';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ToDoModule
+    ToDoModule,
+    LikeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
