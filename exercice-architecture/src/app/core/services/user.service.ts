@@ -24,4 +24,13 @@ export class UserService {
             return 'not connected'
         }
     }
+
+    testLogin() {
+        return new Promise<boolean>((resolve,reject) => {
+            setTimeout(() => {
+                resolve(true)
+            }, 3000);
+        })
+        
+    }
 }

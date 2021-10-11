@@ -44,4 +44,26 @@ describe("UserService", ()=> {
         const response = userService.getIsLogged(false)
         expect(response).toBe("not connected")
     })
+
+    it("test Login with delay", async () => {
+        //Exemple d'un test asynchrone
+        // await new Promise<void>((resolve, reject) => {
+        //     setTimeout(() => {
+        //         test = true
+        //         expect(test).toBeTrue()
+        //         resolve()
+        //     }, 3000);
+        // })
+        //Exemple d'un test asynchrone dans un service
+        // await new Promise<void>((resolve,reject) => {
+        //     userService.testLogin().then((response) => {
+        //         expect(response).toBeTrue()
+        //         resolve()
+        //     })
+        // })
+        //<=> avec uniquement le async await
+        let test = await userService.testLogin()
+        expect(test).toBeTrue()
+        
+    })
 })
