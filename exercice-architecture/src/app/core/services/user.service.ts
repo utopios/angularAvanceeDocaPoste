@@ -16,8 +16,8 @@ export class UserService {
 
     }
     //En fonction du boolean, on renvoie la chaine connecté ou non connecté
-    getIsLogged(logged:boolean) : string {
-        if(logged) {
+    getIsLogged() : string {
+        if(this.callApiRest()) {
             return 'connected'
         }
         else {
@@ -32,5 +32,9 @@ export class UserService {
             }, 3000);
         })
         
+    }
+
+    callApiRest() : boolean {
+        return false
     }
 }

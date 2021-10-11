@@ -36,12 +36,14 @@ describe("UserService", ()=> {
     })
 
     it("test getIsLogged connected", ()=> {
-        const response = userService.getIsLogged(true)
+        spyOn(userService, 'callApiRest').and.returnValue(true)
+        const response = userService.getIsLogged()
         expect(response).toBe("connected")
     })
 
     it("test getIsLogged not connected", ()=> {
-        const response = userService.getIsLogged(false)
+        spyOn(userService, 'callApiRest').and.returnValue(false)
+        const response = userService.getIsLogged()
         expect(response).toBe("not connected")
     })
 
@@ -65,5 +67,9 @@ describe("UserService", ()=> {
         let test = await userService.testLogin()
         expect(test).toBeTrue()
         
+    })
+
+    it("Test with spyOn", () => {
+        // spyOn(userService, 'callApiRest').and.returnValue('test')
     })
 })
