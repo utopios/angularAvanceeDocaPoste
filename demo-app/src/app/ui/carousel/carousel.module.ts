@@ -17,7 +17,7 @@ function FACTORY_PUBLIC_CAROUSEL_SERVICE(parentCarouselPublicService: CarouselPu
   providers:[
     {
       provide:CarouselPublicService,
-      useFactory: 
+      useFactory: FACTORY_PUBLIC_CAROUSEL_SERVICE
     }
   ],
   exports:[
