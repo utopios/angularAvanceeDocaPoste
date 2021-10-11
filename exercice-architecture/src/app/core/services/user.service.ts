@@ -17,6 +17,11 @@ export class UserService {
     }
     //En fonction du boolean, on renvoie la chaine connecté ou non connecté
     getIsLogged(logged:boolean) : string {
-
+        if(logged) {
+            return 'connected'
+        }
+        else {
+            return 'not connected'
+        }
     }
 }

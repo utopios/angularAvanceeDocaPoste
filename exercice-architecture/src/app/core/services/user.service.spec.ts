@@ -34,4 +34,14 @@ describe("UserService", ()=> {
     it("test get data", () => {
         expect(userService.getData()).toThrow()
     })
+
+    it("test getIsLogged connected", ()=> {
+        const response = userService.getIsLogged(true)
+        expect(response).toBe("connected")
+    })
+
+    it("test getIsLogged not connected", ()=> {
+        const response = userService.getIsLogged(false)
+        expect(response).toBe("not connected")
+    })
 })
