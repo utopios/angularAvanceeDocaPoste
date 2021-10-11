@@ -13,6 +13,7 @@ export class SideBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.config)
   }
 
 }
