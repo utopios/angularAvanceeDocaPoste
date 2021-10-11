@@ -30,4 +30,8 @@ describe("UserService", ()=> {
         const response = userService.getAge()
         expect(response).toBeGreaterThan(18)
     })
+
+    it("test get data", () => {
+        expect(userService.getData())
+    })
 })

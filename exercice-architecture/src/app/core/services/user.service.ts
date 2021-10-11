@@ -11,4 +11,8 @@ export class UserService {
     getAge():number {
         return 34
     }
+    //Ajouter un exemple avec un faux positif
+    getData() {
+
+    }
 }
