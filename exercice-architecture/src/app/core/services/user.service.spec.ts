@@ -32,6 +32,6 @@ describe("UserService", ()=> {
     })
 
     it("test get data", () => {
-        expect(userService.getData())
+        expect(userService.getData()).toThrow()
     })
 })
