@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'exercice-architecture';
+  config = {
+    logo : 'assets/img/logo.png',
+    menuItems : [
+      {path:'/', title:'dashboard'}
+    ]
+  }
 }
