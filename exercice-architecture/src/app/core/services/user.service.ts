@@ -8,4 +8,7 @@ export class UserService {
     getUserName() :string {
         return "abadi ihab"
     }
+    getAge():number {
+        return 34
+    }
 }
