@@ -15,4 +15,8 @@ export class UserService {
     getData() {
 
     }
+    //En fonction du boolean, on renvoie la chaine connecté ou non connecté
+    getIsLogged(logged:boolean) : string {
+
+    }
 }
