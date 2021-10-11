@@ -7,9 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PluginComponent implements OnInit {
   @Input('plugins') listPlugins : Array<string> = new Array<string>()
+  message: string = 'en cours de chargement'
   constructor() { }
 
   ngOnInit(): void {
+    this.message = 'chargement términé'
   }
 
 }

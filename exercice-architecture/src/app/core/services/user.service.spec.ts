@@ -64,8 +64,8 @@ describe("UserService", ()=> {
         //     })
         // })
         //<=> avec uniquement le async await
-        let test = await userService.testLogin()
-        expect(test).toBeTrue()
+        // let test = await userService.testLogin()
+        // expect(test).toBeTrue()
         
     })
 
