@@ -5,22 +5,19 @@ import { Directive, ElementRef, EventEmitter, Output, Renderer2 } from '@angular
 })
 export class ClickedWithDelayDirective {
   @Output('clickedDelay') clicked = new EventEmitter<string>()
-  startEvent:boolean = true
   constructor(private renderer: Renderer2, private el: ElementRef) {
     //Service renderer2 permet d'acceder au dom réel.
     //Service elementRef permet de récupérer l'élément sur le quel la directive est appliquée
-    if(this.startEvent) {
+    
       this.renderer.listen(this.el.nativeElement, 'click', (event) => {
         // setTimeout(() => {
           
         //   this.clicked.emit('Event ok')
         // }, 2000)
+        //A verifier
         event.stopPropagation()
-        console.log('start event')
-        this.startEvent = false
         this.clicked.emit(event)
       })
-    }
     
   }
 
