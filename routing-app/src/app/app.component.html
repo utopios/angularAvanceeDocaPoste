@@ -1,0 +1,8 @@
+
+<div class="menu">
+  <a [routerLink]="['/']">Home</a>
+  <a [routerLink]="['/contact']">contact</a>
+  <a [routerLink]="['/products']">products</a>
+  <a (click)="goTo('contact')">Contact par le service</a>
+</div>
+<router-outlet></router-outlet>
