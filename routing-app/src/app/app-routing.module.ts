@@ -8,7 +8,7 @@ import { HomePage } from './pages/home.page';
 
 const routes: Routes = [
   {path :'', component:HomePage},
-  {path:'auth', data: {preload: true}, loadChildren : () => import('./auth/auth.module').then(m => m.AuthModule)},
+  {path:'auth', data: {delay: 5000}, loadChildren : () => import('./auth/auth.module').then(m => m.AuthModule)},
   {path :'contact', component: ContactPage},
   {path :'products', loadChildren : () => import('./product/product.module').then(m => m.ProductModule)},
   {path: '**', redirectTo : ''}
