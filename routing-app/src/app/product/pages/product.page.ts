@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { ProductsService } from "./shared/products.service";
+import { ProductsService } from "../shared/products.service";
 
 @Component({
     selector: 'product-page',
-    templateUrl : `./templates/product.page.html`
+    templateUrl : `../templates/product.page.html`
 })
 export class ProductPage {
     product:any

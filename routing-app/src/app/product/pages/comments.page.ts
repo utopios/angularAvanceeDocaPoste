@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { ProductsService } from "./shared/products.service";
+import { ProductsService } from "../shared/products.service";
 
 @Component({
     selector: 'comments-page',
-    templateUrl : `./templates/comments.page.html`
+    templateUrl : `../templates/comments.page.html`
 })
 export class CommentsPage {
     productId:any
