@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommentsPage } from './pages/comments.page';
 import { ProductResolver } from './shared/product.resolver';
 import { ProductsResolver } from './shared/products.resolver';
+import { UiModule } from '../ui/ui.module';
 
 const routes:Routes = [
   {path : '', component: ProductsPage, resolve: {
@@ -24,7 +25,8 @@ const routes:Routes = [
   providers:[ProductsService, ProductResolver, ProductsResolver],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    UiModule
   ]
 })
 export class ProductModule { }

@@ -1,0 +1,1 @@
+export {DeleteButtonComponent} from "./delete-button.component"

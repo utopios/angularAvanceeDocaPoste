@@ -1,5 +1,6 @@
 <div>
     <div *ngFor="let product of products">
         {{product.title}} <a [routerLink]="['/products',product.id]">detail</a>
+        <delete-button (actionButton)='deleteProduct(product.id)'></delete-button>
     </div>
 </div>
