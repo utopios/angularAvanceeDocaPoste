@@ -9,9 +9,13 @@ export class ClickedWithDelayDirective {
     //Service renderer2 permet d'acceder au dom réel.
     //Service elementRef permet de récupérer l'élément sur le quel la directive est appliquée
     this.renderer.listen(this.el.nativeElement, 'click', (event) => {
-      setTimeout(() => {
-        this.clicked.emit('Event ok')
-      }, 2000)
+      // setTimeout(() => {
+        
+      //   this.clicked.emit('Event ok')
+      // }, 2000)
+      event.stopPropagation();
+      console.log('start event')
+      this.clicked.emit(event)
     })
   }
 

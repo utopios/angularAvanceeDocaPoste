@@ -1,7 +1,7 @@
 <div>
-  <p (clickedDelay)='eventDelay($event)'>Start event with delay</p>
+  <p >Start event with delay</p>
 
   <p (click)="actionClick()">
-    cliquez ici pour <a>s'abonner</a>
+    cliquez ici pour <a (clickedDelay)='actionClick()'>s'abonner</a>
   </p>
 </div>
