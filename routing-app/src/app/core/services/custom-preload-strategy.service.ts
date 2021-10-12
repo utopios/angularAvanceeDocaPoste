@@ -9,7 +9,9 @@ export class CustomPreloadStrategyService implements PreloadingStrategy {
 
   constructor() { }
   preload(route: Route, fn: () => Observable<any>): Observable<any> {
-    
+    if(this.slowConnection()) {
+      return of(null)
+    }
     if(route.data && route.data.preload) {
       
       return fn()
@@ -18,5 +20,15 @@ export class CustomPreloadStrategyService implements PreloadingStrategy {
      return timer(route.data.delay).pipe(map(() => fn()))
     }
     return of(null)
+  }
+
+  slowConnection() {
+    const connection = navigator.connection
+    const typeConnection = connection?.type
+    if(connection) {
+      return typeConnection == "cellular"
+    } else {
+      return false
+    }
   }
 }
