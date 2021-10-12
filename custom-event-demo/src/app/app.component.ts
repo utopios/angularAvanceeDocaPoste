@@ -12,4 +12,8 @@ export class AppComponent {
     console.log(val)
     alert(val)
   }
+
+  actionClick() {
+    console.log("ok")
+  }
 }
