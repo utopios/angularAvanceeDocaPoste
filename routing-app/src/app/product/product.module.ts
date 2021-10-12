@@ -5,17 +5,23 @@ import { ProductsPage } from './pages/products.page';
 import { ProductsService } from './shared/products.service';
 import { RouterModule, Routes } from '@angular/router';
 import { CommentsPage } from './pages/comments.page';
+import { ProductResolver } from './shared/product.resolver';
+import { ProductsResolver } from './shared/products.resolver';
 
 const routes:Routes = [
-  {path : '', component: ProductsPage},
-  {path : ':id', component: ProductPage, children: [
+  {path : '', component: ProductsPage, resolve: {
+    products: ProductsResolver
+  }},
+  {path : ':id', component: ProductPage, resolve: {
+    product: ProductResolver
+  }, children: [
     {path : 'comments', component: CommentsPage}
   ]},
 ]
 
 @NgModule({
   declarations: [ProductPage, ProductsPage, CommentsPage],
-  providers:[ProductsService],
+  providers:[ProductsService, ProductResolver, ProductsResolver],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)

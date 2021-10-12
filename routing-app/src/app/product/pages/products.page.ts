@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { ProductsService } from "../shared/products.service";
 
 @Component({
@@ -8,7 +9,9 @@ import { ProductsService } from "../shared/products.service";
 export class ProductsPage {
     products:any
 
-    constructor(private productsService:ProductsService) {
-        this.products = this.productsService.getProducts()
+    constructor(private productsService:ProductsService, private route:ActivatedRoute) {
+        this.route.data.subscribe(data => {
+            this.products = data.products
+        })
     }
 }
