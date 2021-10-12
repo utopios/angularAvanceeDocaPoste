@@ -1,3 +1,7 @@
 <div>
     {{product.id}} {{product.title}}
+    <div>
+        <a [routerLink]="['/product', product.id, 'comments']">Comments</a>
+    </div>
+    <router-outlet></router-outlet>
 </div>
