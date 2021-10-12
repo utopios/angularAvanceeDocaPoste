@@ -9,6 +9,11 @@ export class FirstPage {
         return title
     }
 
+    getTextFromSelector(selector:string):any {
+        const title = element(by.css(selector)).getText()
+        return title
+    }
+
     getHeaderInformation():any {
         return element(by.css('.header-title')).getText()
     }

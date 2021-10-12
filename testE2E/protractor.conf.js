@@ -6,10 +6,10 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'firefox'
   },
   directConnect: true,
-  baseUrl: 'http://localhost:55979/',
+  baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
