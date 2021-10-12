@@ -5,5 +5,6 @@
   <a [routerLink]="['/products']">products</a>
   <a [routerLink]="['/auth']">authentication</a>
   <a (click)="goTo('contact')">Contact par le service</a>
+  <div *ngIf="loading">Chargement en cours</div>
 </div>
 <router-outlet></router-outlet>

@@ -12,8 +12,9 @@ export class AppComponent {
   }
 
   title = 'routing-app';
-
+  loading = false
   goTo(link:string) {
+    this.loading = true
     this.router.navigate([`${link}`])
   }
 }
