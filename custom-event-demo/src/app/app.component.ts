@@ -13,7 +13,7 @@ export class AppComponent {
     alert(val)
   }
 
-  actionClick() {
-    console.log("ok")
+  actionClick(event:any) {
+    console.log(event)
   }
 }
