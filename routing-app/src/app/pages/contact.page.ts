@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { LoadingService } from "../core/services/loading.service";
 
 @Component({
     selector: 'contact-page',
@@ -10,9 +11,10 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class ContactPage {
     contacts:any
-    constructor(private route:ActivatedRoute) {
+    constructor(private route:ActivatedRoute, private loadingService:LoadingService) {
         this.route.data.subscribe((data) => {
             this.contacts = data.contacts
+            loadingService.isLoading.next(false)
         })
     }
 }
