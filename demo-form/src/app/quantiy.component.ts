@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator } from "@angular/forms";
 
 @Component({
     selector:'quantity',
@@ -9,10 +9,23 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
             provide: NG_VALUE_ACCESSOR,
             multi:true,
             useExisting:QuantityComponent
+        },
+        {
+            provide: NG_VALIDATORS,
+            multi:true,
+            useExisting: QuantityComponent
         }
     ]
 })
-export class QuantityComponent implements ControlValueAccessor {
+export class QuantityComponent implements ControlValueAccessor, Validator {
+    validate(control: AbstractControl): ValidationErrors | null {
+        if(control.value < 0) {
+            return {
+                'needToBePositive' : false
+            }
+        }
+        return null
+    }
     writeValue(obj: any): void {
         this.quantity = obj
     }

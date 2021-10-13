@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
 
 
   submitForm() {
-    console.log(this.form.value)
+    console.log(this.form)
   }
 
   updateQuantity(quantity:number) {
