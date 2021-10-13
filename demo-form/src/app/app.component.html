@@ -10,7 +10,8 @@
     <input type="text" formControlName="lastName" />
   </div>
   <!-- <custom-field labelProps="custom Field" formControlName="customField"></custom-field> -->
-  <quantity [quantity]="form.controls.quantity.value" (updateQuantity)='updateQuantity($event)'></quantity>
+  <!-- <quantity [quantity]="form.controls.quantity.value" (updateQuantity)='updateQuantity($event)'></quantity> -->
+  <quantity formControlName="quantity"></quantity>
   <div>
     <button type="sumbit">Valider</button>
   </div>
