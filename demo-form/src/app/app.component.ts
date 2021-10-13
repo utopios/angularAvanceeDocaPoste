@@ -14,19 +14,24 @@ export class AppComponent implements OnInit {
     this.form = this.formBuilder.group({
       "firstName" : new FormControl('', Validators.required),
       "lastName" : new FormControl('', Validators.required),
-      "customField" : new FormControl('')
+      // "customField" : new FormControl('')
+      "quantity": [0]
     })
   }
   ngOnInit(): void {
     this.form.setValue({
       firstName:'toto',
       lastName:'titi',
-      customField: 'new val'
+      quantity: 10
     })
   }
 
 
   submitForm() {
     console.log(this.form.value)
+  }
+
+  updateQuantity(quantity:number) {
+    this.form.setValue({...this.form.value, quantity:quantity})
   }
 }

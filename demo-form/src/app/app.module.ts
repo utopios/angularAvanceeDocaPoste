@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CustomFieldComponent } from './custom-field.component';
+import { QuantityComponent } from './quantiy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomFieldComponent
+    CustomFieldComponent,
+    QuantityComponent
   ],
   imports: [
     BrowserModule,
