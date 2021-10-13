@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactPage } from './pages/contact.page';
 import { HomePage } from './pages/home.page';
-
+import {HttpClientModule} from "@angular/common/http"
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { HomePage } from './pages/home.page';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
