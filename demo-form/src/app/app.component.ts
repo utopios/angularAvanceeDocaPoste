@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,9 +6,11 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'demo-fromulaire';
   form:FormGroup = new FormGroup({})
+
+  @ViewChild('maDiv') container?: ViewContainerRef
 
   constructor(private formBuilder:FormBuilder) {
     this.form = this.formBuilder.group({
@@ -17,6 +19,9 @@ export class AppComponent implements OnInit {
       // "customField" : new FormControl('')
       "quantity": [0]
     })
+  }
+  ngAfterViewInit(): void {
+    console.log(this.container)
   }
   ngOnInit(): void {
     this.form.setValue({
