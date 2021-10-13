@@ -1,0 +1,16 @@
+
+<div>
+  <h1>Formulaire</h1>
+</div>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <div>
+    <input type="text" formControlName="firstName" />
+  </div>
+  <div>
+    <input type="text" formControlName="lastName" />
+  </div>
+  <custom-field labelProps="custom Field" formControlName="customField"></custom-field>
+  <div>
+    <button type="sumbit">Valider</button>
+  </div>
+</form>
